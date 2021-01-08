@@ -5,7 +5,7 @@
  *                            | (__| |_| |  _ <| |___
  *                             \___|\___/|_| \_\_____|
  *
- * Copyright (C) 1998 - 2020, Daniel Stenberg, <daniel@haxx.se>, et al.
+ * Copyright (C) 1998 - 2021, Daniel Stenberg, <daniel@haxx.se>, et al.
  *
  * This software is licensed as described in the file COPYING, which
  * you should have received as part of this distribution. The terms
@@ -83,12 +83,6 @@ static int quiche_getsock(struct connectdata *conn, curl_socket_t *socks)
   return bitmap;
 }
 
-static int quiche_perform_getsock(const struct connectdata *conn,
-                                  curl_socket_t *socks)
-{
-  return quiche_getsock((struct connectdata *)conn, socks);
-}
-
 static CURLcode qs_disconnect(struct connectdata *conn,
                               struct quicsocket *qs)
 {
@@ -111,10 +105,12 @@ static CURLcode qs_disconnect(struct connectdata *conn,
   return CURLE_OK;
 }
 
-static CURLcode quiche_disconnect(struct connectdata *conn,
+static CURLcode quiche_disconnect(struct Curl_easy *data,
+                                  struct connectdata *conn,
                                   bool dead_connection)
 {
   struct quicsocket *qs = conn->quic;
+  (void)data;
   (void)dead_connection;
   return qs_disconnect(conn, qs);
 }
@@ -134,11 +130,11 @@ static unsigned int quiche_conncheck(struct connectdata *conn,
   return CONNRESULT_NONE;
 }
 
-static CURLcode quiche_do(struct connectdata *conn, bool *done)
+static CURLcode quiche_do(struct Curl_easy *data, bool *done)
 {
-  struct HTTP *stream = conn->data->req.p.http;
+  struct HTTP *stream = data->req.p.http;
   stream->h3req = FALSE; /* not sent */
-  return Curl_http(conn, done);
+  return Curl_http(data, done);
 }
 
 static const struct Curl_handler Curl_handler_http3 = {
@@ -153,7 +149,7 @@ static const struct Curl_handler Curl_handler_http3 = {
   quiche_getsock,                       /* proto_getsock */
   quiche_getsock,                       /* doing_getsock */
   ZERO_NULL,                            /* domore_getsock */
-  quiche_perform_getsock,               /* perform_getsock */
+  quiche_getsock,                       /* perform_getsock */
   quiche_disconnect,                    /* disconnect */
   ZERO_NULL,                            /* readwrite */
   quiche_conncheck,                     /* connection_check */

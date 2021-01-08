@@ -5,7 +5,7 @@
  *                            | (__| |_| |  _ <| |___
  *                             \___|\___/|_| \_\_____|
  *
- * Copyright (C) 1998 - 2020, Daniel Stenberg, <daniel@haxx.se>, et al.
+ * Copyright (C) 1998 - 2021, Daniel Stenberg, <daniel@haxx.se>, et al.
  *
  * This software is licensed as described in the file COPYING, which
  * you should have received as part of this distribution. The terms
@@ -861,12 +861,6 @@ static int ng_getsock(struct connectdata *conn, curl_socket_t *socks)
   return bitmap;
 }
 
-static int ng_perform_getsock(const struct connectdata *conn,
-                              curl_socket_t *socks)
-{
-  return ng_getsock((struct connectdata *)conn, socks);
-}
-
 static void qs_disconnect(struct quicsocket *qs)
 {
   int i;
@@ -904,10 +898,12 @@ void Curl_quic_disconnect(struct connectdata *conn,
     qs_disconnect(&conn->hequic[tempindex]);
 }
 
-static CURLcode ng_disconnect(struct connectdata *conn,
+static CURLcode ng_disconnect(struct Curl_easy *data,
+                              struct connectdata *conn,
                               bool dead_connection)
 {
   (void)dead_connection;
+  (void)data;
   Curl_quic_disconnect(conn, 0);
   Curl_quic_disconnect(conn, 1);
   return CURLE_OK;
@@ -933,7 +929,7 @@ static const struct Curl_handler Curl_handler_http3 = {
   ng_getsock,                           /* proto_getsock */
   ng_getsock,                           /* doing_getsock */
   ZERO_NULL,                            /* domore_getsock */
-  ng_perform_getsock,                   /* perform_getsock */
+  ng_getsock,                           /* perform_getsock */
   ng_disconnect,                        /* disconnect */
   ZERO_NULL,                            /* readwrite */
   ng_conncheck,                         /* connection_check */
