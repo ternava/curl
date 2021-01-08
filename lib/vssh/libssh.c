@@ -2502,6 +2502,7 @@ static CURLcode sftp_disconnect(struct Curl_easy *data,
                                 bool dead_connection)
 {
   CURLcode result = CURLE_OK;
+  struct connectdata *conn = data->conn;
   (void) dead_connection;
 
   DEBUGF(infof(data, "SSH DISCONNECT starts now\n"));
