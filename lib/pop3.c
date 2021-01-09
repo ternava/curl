@@ -1049,7 +1049,6 @@ static CURLcode pop3_block_statemach(struct Curl_easy *data,
                                      bool disconnecting)
 {
   CURLcode result = CURLE_OK;
-  struct connectdata *conn = data->conn;
   struct pop3_conn *pop3c = &conn->proto.pop3c;
 
   while(pop3c->state != POP3_STOP && !result)
