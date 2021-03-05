@@ -908,8 +908,8 @@ struct Curl_easy *curl_easy_duphandle(struct Curl_easy *data)
 #endif
   /* Clone the resolver handle, if present, for the new handle */
   if(Curl_resolver_duphandle(outcurl,
-                             &outcurl->state.resolver,
-                             data->state.resolver))
+                             &outcurl->state.async.resolver,
+                             data->state.async.resolver))
     goto fail;
 
 #ifdef USE_ARES
@@ -1034,8 +1034,8 @@ CURLcode curl_easy_pause(struct Curl_easy *data, int action)
 
   /* Unpause parts in active mime tree. */
   if((k->keepon & ~newstate & KEEP_SEND_PAUSE) &&
-     (data->mstate == CURLM_STATE_PERFORM ||
-      data->mstate == CURLM_STATE_TOOFAST) &&
+     (data->mstate == MSTATE_PERFORMING ||
+      data->mstate == MSTATE_RATELIMITING) &&
      data->state.fread_func == (curl_read_callback) Curl_mime_read) {
     Curl_mime_unpause(data->state.in);
   }
@@ -1052,8 +1052,6 @@ CURLcode curl_easy_pause(struct Curl_easy *data, int action)
       unsigned int i;
       unsigned int count = data->state.tempcount;
       struct tempbuf writebuf[3]; /* there can only be three */
-      struct connectdata *conn = data->conn;
-      struct Curl_easy *saved_data = NULL;
 
       /* copy the structs to allow for immediate re-pausing */
       for(i = 0; i < data->state.tempcount; i++) {
@@ -1062,25 +1060,15 @@ CURLcode curl_easy_pause(struct Curl_easy *data, int action)
       }
       data->state.tempcount = 0;
 
-      /* set the connection's current owner */
-      if(conn->data != data) {
-        saved_data = conn->data;
-        conn->data = data;
-      }
-
       for(i = 0; i < count; i++) {
         /* even if one function returns error, this loops through and frees
            all buffers */
         if(!result)
-          result = Curl_client_write(conn, writebuf[i].type,
+          result = Curl_client_write(data, writebuf[i].type,
                                      Curl_dyn_ptr(&writebuf[i].b),
                                      Curl_dyn_len(&writebuf[i].b));
         Curl_dyn_free(&writebuf[i].b);
       }
-
-      /* recover previous owner of the connection */
-      if(saved_data)
-        conn->data = saved_data;
 
       if(result)
         return result;
@@ -1156,8 +1144,13 @@ CURLcode curl_easy_recv(struct Curl_easy *data, void *buffer, size_t buflen,
   if(result)
     return result;
 
+  if(!data->conn)
+    /* on first invoke, the transfer has been detached from the connection and
+       needs to be reattached */
+    Curl_attach_connnection(data, c);
+
   *n = 0;
-  result = Curl_read(c, sfd, buffer, buflen, &n1);
+  result = Curl_read(data, sfd, buffer, buflen, &n1);
 
   if(result)
     return result;
@@ -1186,8 +1179,13 @@ CURLcode curl_easy_send(struct Curl_easy *data, const void *buffer,
   if(result)
     return result;
 
+  if(!data->conn)
+    /* on first invoke, the transfer has been detached from the connection and
+       needs to be reattached */
+    Curl_attach_connnection(data, c);
+
   *n = 0;
-  result = Curl_write(c, sfd, buffer, buflen, &n1);
+  result = Curl_write(data, sfd, buffer, buflen, &n1);
 
   if(n1 == -1)
     return CURLE_SEND_ERROR;
@@ -1206,16 +1204,16 @@ CURLcode curl_easy_send(struct Curl_easy *data, const void *buffer,
  *
  * Returns always 0.
  */
-static int conn_upkeep(struct connectdata *conn,
+static int conn_upkeep(struct Curl_easy *data,
+                       struct connectdata *conn,
                        void *param)
 {
   /* Param is unused. */
   (void)param;
 
-  if(conn->handler->connection_check) {
+  if(conn->handler->connection_check)
     /* Do a protocol-specific keepalive check on the connection. */
-    conn->handler->connection_check(conn, CONNCHECK_KEEPALIVE);
-  }
+    conn->handler->connection_check(data, conn, CONNCHECK_KEEPALIVE);
 
   return 0; /* continue iteration */
 }

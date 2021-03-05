@@ -10,7 +10,7 @@ CURLOPT_AWS_SIGV4
 <reply>
 <data nocheck="yes">
 HTTP/1.1 302 OK
-Date: Thu, 09 Nov 2010 14:49:00 GMT
+Date: Tue, 09 Nov 2010 14:49:00 GMT
 Server: test-server/fake
 Content-Type: text/html
 Content-Length: 0
@@ -19,7 +19,7 @@ Location: /19330002
 </data>
 <data2>
 HTTP/1.1 200 OK
-Date: Thu, 09 Nov 2010 14:49:00 GMT
+Date: Tue, 09 Nov 2010 14:49:00 GMT
 Server: test-server/fake
 Content-Type: text/html
 Content-Length: 0
@@ -40,14 +40,14 @@ crypto
 </features>
 
 <name>
-HTTP AWS_SIGV4
+HTTP AWS_SIGV4 with one provider and auth cred via URL
 </name>
 <tool>
 lib1933
 </tool>
 
 <command>
-http://%HOSTIP:%HTTPPORT/1933/testapi/test
+http://xxx:yyy@%HOSTIP:%HTTPPORT/1933/testapi/test
 </command>
 </client>
 
@@ -61,8 +61,8 @@ http://%HOSTIP:%HTTPPORT/1933/testapi/test
 <protocol>
 GET /1933/testapi/test HTTP/1.1
 Host: %HOSTIP:%HTTPPORT
-X-yyy-Date: 19700101T000000Z
-Authorization: XXX4-HMAC-SHA256 Credential=xxx/19700101/0/127/xxx4_request, SignedHeaders=content-type;host;x-yyy-date, Signature=b125a904e7f5cc1f553d8f3682947eb003c4ca6c504097c0dc2d9323289bfcdd
+Authorization: XXX4-HMAC-SHA256 Credential=xxx/19700101/0/127/xxx4_request, SignedHeaders=content-type;host;x-xxx-date, Signature=d2c2dff48c59ec49dc31ef94f18c5dc1ac3eae2a70d51633a4342dadc0683664
+X-Xxx-Date: 19700101T000000Z
 
 </protocol>
 </verify>

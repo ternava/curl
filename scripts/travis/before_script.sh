@@ -62,7 +62,10 @@ if [ "$NGTCP2" = yes ]; then
   git clone --depth 1 https://github.com/ngtcp2/ngtcp2
   cd ngtcp2
   autoreconf -i
-  ./configure PKG_CONFIG_PATH=$HOME/ngbuild/lib/pkgconfig LDFLAGS="-Wl,-rpath,$HOME/ngbuild/lib" --prefix=$HOME/ngbuild --enable-lib-only
+  if test -n "$GNUTLS"; then
+      WITHGNUTLS="--with-gnutls"
+  fi
+  ./configure PKG_CONFIG_PATH=$HOME/ngbuild/lib/pkgconfig LDFLAGS="-Wl,-rpath,$HOME/ngbuild/lib" --prefix=$HOME/ngbuild --enable-lib-only $WITHGNUTLS
   make
   make install
 fi
@@ -118,7 +121,7 @@ if [ "$TRAVIS_OS_NAME" = linux -a "$QUICHE" ]; then
   curl https://sh.rustup.rs -sSf | sh -s -- -y
   source $HOME/.cargo/env
   cd $HOME/quiche
-  cargo build -v --release --features pkg-config-meta,qlog
+  cargo build -v --release --features ffi,pkg-config-meta,qlog
   mkdir -v deps/boringssl/src/lib
   ln -vnf $(find target/release -name libcrypto.a -o -name libssl.a) deps/boringssl/src/lib/
 fi
