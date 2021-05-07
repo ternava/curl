@@ -3,7 +3,7 @@ import sys, os
 
 from options import all_options
 
-stats_file = "measures/exe_size_all.txt"
+stats_file = "measures/exe_size_single3.csv"
 exe_path = "./src/curl"
 
 def calculate_stats(exe_path):
@@ -21,8 +21,9 @@ def print_stats(opt):
         file=open(stats_file, "a"))
     
 def compilecurl(compile_time_opt):
-    subprocess.run(["autoreconf", "-fi"])
-    subprocess.run(["./configure", compile_time_opt])
+    subprocess.run(["make", "clean"])
+    # subprocess.run(["autoreconf", "-fi"])
+    subprocess.run(["./configure", "--disable-shared"] + compile_time_opt)
     subprocess.run(["make"])
 
 def do_operations():

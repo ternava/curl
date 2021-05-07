@@ -8,20 +8,20 @@ VAR=VALUE.  See below for descriptions of some of the useful variables.
 Defaults for the options are specified in brackets.
 
 Configuration:
-  -h, --help              display this help and exit
-      --help=short        display options specific to this package
+  -h, --help              display this help and exit                      //other
+      --help=short        display options specific to this package        
       --help=recursive    display the short help of all the included packages
-  -V, --version           display version information and exit
-  -q, --quiet, --silent   do not print `checking ...' messages
+  -V, --version           display version information and exit            //other
+  -q, --quiet, --silent   do not print `checking ...' messages            //other
       --cache-file=FILE   cache test results in FILE [disabled]
-  -C, --config-cache      alias for `--cache-file=config.cache'
-  -n, --no-create         do not create output files
+  -C, --config-cache      alias for `--cache-file=config.cache'           //other
+  -n, --no-create         do not create output files                      //other
       --srcdir=DIR        find the sources in DIR [configure dir or `..']
 
 Installation directories:
-  --prefix=PREFIX         install architecture-independent files in PREFIX
+  --prefix=PREFIX         install architecture-independent files in PREFIX  //path
                           [/usr/local]
-  --exec-prefix=EPREFIX   install architecture-dependent files in EPREFIX
+  --exec-prefix=EPREFIX   install architecture-dependent files in EPREFIX   //path
                           [PREFIX]
 
 By default, `make install' will install all the files in
@@ -32,34 +32,34 @@ for instance `--prefix=$HOME'.
 For better control, use the options below.
 
 Fine tuning of the installation directories:
-  --bindir=DIR            user executables [EPREFIX/bin]
-  --sbindir=DIR           system admin executables [EPREFIX/sbin]
-  --libexecdir=DIR        program executables [EPREFIX/libexec]
-  --sysconfdir=DIR        read-only single-machine data [PREFIX/etc]
-  --sharedstatedir=DIR    modifiable architecture-independent data [PREFIX/com]
-  --localstatedir=DIR     modifiable single-machine data [PREFIX/var]
-  --libdir=DIR            object code libraries [EPREFIX/lib]
-  --includedir=DIR        C header files [PREFIX/include]
-  --oldincludedir=DIR     C header files for non-gcc [/usr/include]
-  --datarootdir=DIR       read-only arch.-independent data root [PREFIX/share]
-  --datadir=DIR           read-only architecture-independent data [DATAROOTDIR]
-  --infodir=DIR           info documentation [DATAROOTDIR/info]
-  --localedir=DIR         locale-dependent data [DATAROOTDIR/locale]
-  --mandir=DIR            man documentation [DATAROOTDIR/man]
-  --docdir=DIR            documentation root [DATAROOTDIR/doc/curl]
-  --htmldir=DIR           html documentation [DOCDIR]
-  --dvidir=DIR            dvi documentation [DOCDIR]
-  --pdfdir=DIR            pdf documentation [DOCDIR]
-  --psdir=DIR             ps documentation [DOCDIR]
+  --bindir=DIR            user executables [EPREFIX/bin] //path
+  --sbindir=DIR           system admin executables [EPREFIX/sbin] //path
+  --libexecdir=DIR        program executables [EPREFIX/libexec] //path
+  --sysconfdir=DIR        read-only single-machine data [PREFIX/etc] //path
+  --sharedstatedir=DIR    modifiable architecture-independent data [PREFIX/com] //path
+  --localstatedir=DIR     modifiable single-machine data [PREFIX/var] //path
+  --libdir=DIR            object code libraries [EPREFIX/lib] //path
+  --includedir=DIR        C header files [PREFIX/include] //path
+  --oldincludedir=DIR     C header files for non-gcc [/usr/include] //path
+  --datarootdir=DIR       read-only arch.-independent data root [PREFIX/share] //path
+  --datadir=DIR           read-only architecture-independent data [DATAROOTDIR] //path
+  --infodir=DIR           info documentation [DATAROOTDIR/info] //path
+  --localedir=DIR         locale-dependent data [DATAROOTDIR/locale] //path
+  --mandir=DIR            man documentation [DATAROOTDIR/man] //path
+  --docdir=DIR            documentation root [DATAROOTDIR/doc/curl] //path
+  --htmldir=DIR           html documentation [DOCDIR] //path
+  --dvidir=DIR            dvi documentation [DOCDIR] //path
+  --pdfdir=DIR            pdf documentation [DOCDIR] //path
+  --psdir=DIR             ps documentation [DOCDIR] //path
 
 Program names:
-  --program-prefix=PREFIX            prepend PREFIX to installed program names
-  --program-suffix=SUFFIX            append SUFFIX to installed program names
-  --program-transform-name=PROGRAM   run sed PROGRAM on installed program names
+  --program-prefix=PREFIX            prepend PREFIX to installed program names //other
+  --program-suffix=SUFFIX            append SUFFIX to installed program names //other
+  --program-transform-name=PROGRAM   run sed PROGRAM on installed program names //other
 
 System types:
-  --build=BUILD     configure for building on BUILD [guessed]
-  --host=HOST       cross-compile to build programs to run on HOST [BUILD]
+  --build=BUILD     configure for building on BUILD [guessed]  //other
+  --host=HOST       cross-compile to build programs to run on HOST [BUILD] //other
 
 Optional Features:
   --disable-option-checking  ignore unrecognized --enable/--with options
@@ -111,7 +111,7 @@ Optional Features:
   --disable-ldap          Disable LDAP support
   --enable-ldaps          Enable LDAPS support
   --disable-ldaps         Disable LDAPS support
-  --enable-rtsp           Enable RTSP support
+  --enable-rtsp           Enable RTSP support  // no support for this ! 
   --disable-rtsp          Disable RTSP support
   --enable-proxy          Enable proxy support
   --disable-proxy         Disable proxy support
@@ -199,145 +199,149 @@ Optional Features:
   --disable-hsts          Disable HSTS support
 
 Optional Packages:
-  --with-PACKAGE[=ARG]    use PACKAGE [ARG=yes]
-  --without-PACKAGE       do not use PACKAGE (same as --with-PACKAGE=no)
-  --with-pic[=PKGS]       try to use only PIC/non-PIC objects [default=use
-                          both]
-  --with-aix-soname=aix|svr4|both
+  --with-PACKAGE[=ARG]    use PACKAGE [ARG=yes]  //not used
+  --without-PACKAGE       do not use PACKAGE (same as --with-PACKAGE=no) //not used
+  --with-pic[=PKGS]       try to use only PIC/non-PIC objects [default=use //yes, installed
+                          both]   //enumerate
+  --with-aix-soname=aix|svr4|both  //not installed //enumerate
                           shared library versioning (aka "SONAME") variant to
                           provide on AIX, [default=aix].
-  --with-gnu-ld           assume the C compiler uses GNU ld [default=no]
-  --with-sysroot[=DIR]    Search for dependent libraries within DIR (or the
+  --with-gnu-ld           assume the C compiler uses GNU ld [default=no] //yes, installed
+  --with-sysroot[=DIR]    Search for dependent libraries within DIR (or the //not used
                           compiler's sysroot if not specified).
-  --with-zlib=PATH        search for zlib in PATH
-  --without-zlib          disable use of zlib
-  --with-brotli=PATH      Where to look for brotli, PATH points to the BROTLI
+  --with-zlib=PATH        search for zlib in PATH //yes, installed //path
+  --without-zlib          disable use of zlib //yes, installed
+  --with-brotli=PATH      Where to look for brotli, PATH points to the BROTLI //yes, installed //path
                           installation; when possible, set the PKG_CONFIG_PATH
                           environment variable instead of using this option
-  --without-brotli        disable BROTLI
-  --with-zstd=PATH        Where to look for libzstd, PATH points to the
+  --without-brotli        disable BROTLI //yes, installed
+  --with-zstd=PATH        Where to look for libzstd, PATH points to the //yes, installed //path
                           libzstd installation; when possible, set the
                           PKG_CONFIG_PATH environment variable instead of
                           using this option
-  --without-zstd          disable libzstd
-  --with-ldap-lib=libname Specify name of ldap lib file
-  --with-lber-lib=libname Specify name of lber lib file
-  --with-gssapi-includes=DIR
+  --without-zstd          disable libzstd //yes, installed
+  --with-ldap-lib=libname Specify name of ldap lib file //yes, installed
+  --with-lber-lib=libname Specify name of lber lib file //yes, installed
+  --with-gssapi-includes=DIR //yes, installed //path
                           Specify location of GSS-API headers
-  --with-gssapi-libs=DIR  Specify location of GSS-API libs
-  --with-gssapi=DIR       Where to look for GSS-API
-  --with-default-ssl-backend=NAME
+  --with-gssapi-libs=DIR  Specify location of GSS-API libs //path //yes, installed //XHT error when path is given.  The error is related to the SSL
+  --with-gssapi=DIR       Where to look for GSS-API //path //yes, installed //XHT error when path is given. The error is related to the SSL
+  --with-default-ssl-backend=NAME //enumerate //yes, installed, when set to "openssl"
                           Use NAME as default SSL backend
-  --without-default-ssl-backend
+  --without-default-ssl-backend //yes, installed
                           Use implicit default SSL backend
-  --with-winssl           enable Windows native SSL/TLS
-  --without-winssl        disable Windows native SSL/TLS
-  --with-schannel         enable Windows native SSL/TLS
-  --without-schannel      disable Windows native SSL/TLS
-  --with-darwinssl        enable Apple OS native SSL/TLS
-  --without-darwinssl     disable Apple OS native SSL/TLS
-  --with-secure-transport enable Apple OS native SSL/TLS
-  --without-secure-transport
-                          disable Apple OS native SSL/TLS
-  --with-amissl           enable Amiga native SSL/TLS (AmiSSL)
-  --without-amissl        disable Amiga native SSL/TLS (AmiSSL)
-  --with-ssl=PATH         Where to look for OpenSSL, PATH points to the SSL
+  --with-winssl           enable Windows native SSL/TLS //not installed
+  --without-winssl        disable Windows native SSL/TLS //not installed
+  --with-schannel         enable Windows native SSL/TLS //not installed
+  --without-schannel      disable Windows native SSL/TLS //not installed
+  --with-darwinssl        enable Apple OS native SSL/TLS //not installed
+  --without-darwinssl     disable Apple OS native SSL/TLS //not installed
+  --with-secure-transport enable Apple OS native SSL/TLS //not installed
+  --without-secure-transport //not installed
+                          disable Apple OS native SSL/TLS 
+  --with-amissl           enable Amiga native SSL/TLS (AmiSSL) //not installed
+  --without-amissl        disable Amiga native SSL/TLS (AmiSSL) //not installed
+  --with-ssl=PATH         Where to look for OpenSSL, PATH points to the SSL //path //yes, isntalled. Works alone.
                           installation (default: /usr/local/ssl); when
                           possible, set the PKG_CONFIG_PATH environment
                           variable instead of using this option
-  --without-ssl           disable OpenSSL
-  --with-egd-socket=FILE  Entropy Gathering Daemon socket pathname
-  --with-random=FILE      read randomness from FILE (default=/dev/urandom)
-  --with-gnutls=PATH      where to look for GnuTLS, PATH points to the
+  --without-ssl           disable OpenSSL //yes, installed
+  --with-egd-socket=FILE  Entropy Gathering Daemon socket pathname //path //not installed
+  --with-random=FILE      read randomness from FILE (default=/dev/urandom) //path //yes, installed
+  --with-gnutls=PATH      where to look for GnuTLS, PATH points to the //path //yes, installed
                           installation root
-  --without-gnutls        disable GnuTLS detection
-  --with-mbedtls=PATH     where to look for mbedTLS, PATH points to the
+  --without-gnutls        disable GnuTLS detection //yes, installed
+  --with-mbedtls=PATH     where to look for mbedTLS, PATH points to the //path //yes, installed
                           installation root
-  --without-mbedtls       disable mbedTLS detection
-  --with-wolfssl=PATH     where to look for WolfSSL, PATH points to the
+  --without-mbedtls       disable mbedTLS detection //yes, installed
+  --with-wolfssl=PATH     where to look for WolfSSL, PATH points to the path //not installed
                           installation root (default: system lib default)
-  --without-wolfssl       disable WolfSSL detection
-  --with-mesalink=PATH    where to look for MesaLink, PATH points to the
+  --without-wolfssl       disable WolfSSL detection  //not installed // -lnghttp2  -lidn2  -lrtmp -lgsasl -lpsl -lwolfssl -lm -lssl -lcrypto -lssl -lcrypto  -lldap -llber -lzstd  -lbrotlidec  -lz 
+  --with-mesalink=PATH    where to look for MesaLink, PATH points to the //path //not installed //-lnghttp2  -lidn2  -lrtmp -lgsasl -lpsl -lmesalink -lssl -lcrypto -lssl -lcrypto  -lldap -llber -lzstd  -lbrotlidec  -lz 
                           installation root
-  --without-mesalink      disable MesaLink detection
-  --with-bearssl=PATH     where to look for BearSSL, PATH points to the
+  --without-mesalink      disable MesaLink detection //not installed
+  --with-bearssl=PATH     where to look for BearSSL, PATH points to the //path //not installed
                           installation root
-  --without-bearssl       disable BearSSL detection
-  --with-rustls=PATH      where to look for rustls, PATH points to the
+  --without-bearssl       disable BearSSL detection //not installed
+  --with-rustls=PATH      where to look for rustls, PATH points to the //path //not installed // error
                           installation root
-  --without-rustls        disable rustls detection
-  --with-nss=PATH         where to look for NSS, PATH points to the
+  --without-rustls        disable rustls detection  //not installed // error
+  --with-nss=PATH         where to look for NSS, PATH points to the //path //yes, installed
                           installation root
-  --without-nss           disable NSS detection
-  --with-ca-bundle=FILE   Path to a file containing CA certificates (example:
+  --without-nss           disable NSS detection //yes, installed
+  --with-ca-bundle=FILE   Path to a file containing CA certificates (example:  //path //not available
                           /etc/ca-bundle.crt)
-  --without-ca-bundle     Don't use a default CA bundle
-  --with-ca-path=DIRECTORY
+  --without-ca-bundle     Don't use a default CA bundle //yes, it can be used to disable the default certificate
+  --with-ca-path=DIRECTORY                                                  //path //not available
                           Path to a directory containing CA certificates
                           stored individually, with their filenames in a hash
                           format. This option can be used with the OpenSSL,
                           GnuTLS and mbedTLS backends. Refer to OpenSSL
                           c_rehash for details. (example: /etc/certificates)
-  --without-ca-path       Don't use a default CA path
-  --with-ca-fallback      Use the built in CA store of the SSL library
-  --without-ca-fallback   Don't use the built in CA store of the SSL library
-  --without-libpsl        disable support for libpsl cookie checking
-  --without-libgsasl      disable libgsasl support for SCRAM
-  --with-libmetalink=PATH where to look for libmetalink, PATH points to the
+  --without-ca-path       Don't use a default CA path //yes, it can be used to disable the default ca
+  --with-ca-fallback      Use the built in CA store of the SSL library //can be used
+  --without-ca-fallback   Don't use the built in CA store of the SSL library //can be used
+  --without-libpsl        disable support for libpsl cookie checking //yes, installed
+  --without-libgsasl      disable libgsasl support for SCRAM //yes, installed
+  --with-libmetalink=PATH where to look for libmetalink, PATH points to the //path //yes, installed
                           installation root
-  --without-libmetalink   disable libmetalink detection
-  --with-libssh2=PATH     Where to look for libssh2, PATH points to the
+  --without-libmetalink   disable libmetalink detection //yes, installed
+  --with-libssh2=PATH     Where to look for libssh2, PATH points to the //path //yes, installed
                           libssh2 installation; when possible, set the
                           PKG_CONFIG_PATH environment variable instead of
                           using this option
-  --with-libssh2          enable libssh2
-  --with-libssh=PATH      Where to look for libssh, PATH points to the libssh
+  --with-libssh2          enable libssh2 //yes, installed. Shouldn't it be --without instead of --with?
+  --with-libssh=PATH      Where to look for libssh, PATH points to the libssh //path //yes, installed
                           installation; when possible, set the PKG_CONFIG_PATH
                           environment variable instead of using this option
-  --with-libssh           enable libssh
-  --with-wolfssh=PATH     Where to look for wolfssh, PATH points to the
+  --with-libssh           enable libssh //yes, installed. Shouldn't it be --without instead of --with?
+  --with-wolfssh=PATH     Where to look for wolfssh, PATH points to the //path //not installed
                           wolfSSH installation; when possible, set the
                           PKG_CONFIG_PATH environment variable instead of
                           using this option
-  --with-wolfssh          enable wolfssh
-  --with-librtmp=PATH     Where to look for librtmp, PATH points to the
+  --with-wolfssh          enable wolfssh //not installed. Shouldn't it be --without instead of --with?
+  --with-librtmp=PATH     Where to look for librtmp, PATH points to the //path //yes, installed
                           LIBRTMP installation; when possible, set the
                           PKG_CONFIG_PATH environment variable instead of
                           using this option
-  --without-librtmp       disable LIBRTMP
-  --with-winidn=PATH      enable Windows native IDN
-  --without-winidn        disable Windows native IDN
-  --with-libidn2=PATH     Enable libidn2 usage
-  --without-libidn2       Disable libidn2 usage
-  --with-nghttp2=PATH     Enable nghttp2 usage
-  --without-nghttp2       Disable nghttp2 usage
-  --with-ngtcp2=PATH      Enable ngtcp2 usage
-  --without-ngtcp2        Disable ngtcp2 usage
-  --with-nghttp3=PATH     Enable nghttp3 usage
-  --without-nghttp3       Disable nghttp3 usage
-  --with-quiche=PATH      Enable quiche usage
-  --without-quiche        Disable quiche usage
-  --with-hyper=PATH       Enable hyper usage
-  --without-hyper         Disable hyper usage
-  --with-zsh-functions-dir=PATH
+  --without-librtmp       disable LIBRTMP  //yes, installed
+  --with-winidn=PATH      enable Windows native IDN //path //not installed
+  --without-winidn        disable Windows native IDN //not installed
+  --with-libidn2=PATH     Enable libidn2 usage //path //yes, installed
+  --without-libidn2       Disable libidn2 usage //yes, installed
+  --with-nghttp2=PATH     Enable nghttp2 usage //path //yes, installed
+  --without-nghttp2       Disable nghttp2 usage //yes, installed
+  --with-ngtcp2=PATH      Enable ngtcp2 usage //path //not installed
+  --without-ngtcp2        Disable ngtcp2 usage //not installed
+  --with-nghttp3=PATH     Enable nghttp3 usage //path //not installed
+  --without-nghttp3       Disable nghttp3 usage //not installed
+  --with-quiche=PATH      Enable quiche usage //path //not installed
+  --without-quiche        Disable quiche usage //not installed
+  --with-hyper=PATH       Enable hyper usage //path //is installed but is not working
+  --without-hyper         Disable hyper usage  //is installed but is not working
+  --with-zsh-functions-dir=PATH //path //yes, installed
                           Install zsh completions to PATH
-  --without-zsh-functions-dir
+  --without-zsh-functions-dir //yes, installed
                           Do not install zsh completions
-  --with-fish-functions-dir=PATH
+  --with-fish-functions-dir=PATH //path //yes, installed
                           Install fish completions to PATH
-  --without-fish-functions-dir
+  --without-fish-functions-dir //yes, installed
                           Do not install fish completions
 
+28 libraries are installed. Without duplications.
+44/83 options are used that are related to libraries. With duplications.
+
+
 Some influential environment variables:
-  CC          C compiler command
-  CFLAGS      C compiler flags
+  CC          C compiler command //other
+  CFLAGS      C compiler flags //other
   LDFLAGS     linker flags, e.g. -L<lib dir> if you have libraries in a
-              nonstandard directory <lib dir>
-  LIBS        libraries to pass to the linker, e.g. -l<library>
-  CPPFLAGS    (Objective) C/C++ preprocessor flags, e.g. -I<include dir> if
+              nonstandard directory <lib dir> //other
+  LIBS        libraries to pass to the linker, e.g. -l<library> //other
+  CPPFLAGS    (Objective) C/C++ preprocessor flags, e.g. -I<include dir> if //other
               you have headers in a nonstandard directory <include dir>
-  CPP         C preprocessor
-  LT_SYS_LIBRARY_PATH
+  CPP         C preprocessor //other
+  LT_SYS_LIBRARY_PATH //other
               User-defined run-time library search path.
 
 Use these variables to override the choices made by `configure' or to help

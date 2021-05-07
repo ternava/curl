@@ -1,0 +1,114 @@
+The original unique number of found gadgets is: 34543
+The unique number of found gadgets when ['--with-aix-soname=aix'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--with-aix-soname=svr4'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--with-aix-soname=both'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--with-gnu-ld'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--with-zlib'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--with-brotli'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--with-zstd'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--with-ldap-lib'] is removed: 34539. Or, 0.0116% less
+The unique number of found gadgets when ['--with-lber-lib'] is removed: 34540. Or, 0.0087% less
+The unique number of found gadgets when ['--with-default-ssl-backend=openssl'] is removed: 34532. Or, 0.0318% less
+The unique number of found gadgets when ['--with-ssl'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--with-random'] is removed: 34550. Or, 0.0203% more
+The unique number of found gadgets when ['--with-gnutls'] is removed: 36592. Or, 5.9317% more
+The unique number of found gadgets when ['--with-mbedtls'] is removed: 34954. Or, 1.1898% more
+The unique number of found gadgets when ['--with-nss'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--with-ca-fallback'] is removed: 34574. Or, 0.0897% more
+The unique number of found gadgets when ['--with-libmetalink'] is removed: 35218. Or, 1.9541% more
+The unique number of found gadgets when ['--with-libssh2'] is removed: 36424. Or, 5.4454% more
+The unique number of found gadgets when ['--with-libssh'] is removed: 35584. Or, 3.0136% more
+The unique number of found gadgets when ['--with-librtmp'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--with-libidn2'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--with-nghttp2'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--with-zsh-functions-dir'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--with-fish-functions-dir'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--with-gssapi-includes'] is removed: 35216. Or, 1.9483% more
+The unique number of found gadgets when ['--with-gssapi-libs'] is removed: 35216. Or, 1.9483% more
+The unique number of found gadgets when ['--with-gssapi'] is removed: 35216. Or, 1.9483% more
+The unique number of found gadgets when ['--without-zlib'] is removed: 34644. Or, 0.2924% more
+The unique number of found gadgets when ['--without-brotli'] is removed: 34756. Or, 0.6166% more
+The unique number of found gadgets when ['--without-zstd'] is removed: 34791. Or, 0.7179% more
+The unique number of found gadgets when ['--without-default-ssl-backend'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--without-ssl'] is removed: 30829. Or, 10.7518% less
+The unique number of found gadgets when ['--without-gnutls'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--without-mbedtls'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--without-nss'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--without-ca-bundle'] is removed: 34639. Or, 0.2779% more
+The unique number of found gadgets when ['--without-ca-path'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--without-ca-fallback'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--without-libpsl'] is removed: 34682. Or, 0.4024% more
+The unique number of found gadgets when ['--without-libgsasl'] is removed: 34695. Or, 0.4400% more
+The unique number of found gadgets when ['--without-libmetalink'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--without-librtmp'] is removed: 34568. Or, 0.0724% more
+The unique number of found gadgets when ['--without-winidn'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--without-libidn2'] is removed: 34701. Or, 0.4574% more
+The unique number of found gadgets when ['--without-nghttp2'] is removed: 33681. Or, 2.4954% less
+The unique number of found gadgets when ['--without-zsh-functions-dir'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--without-fish-functions-dir'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--disable-silent-rules'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--disable-debug'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--disable-optimize'] is removed: 35265. Or, 2.0901% more
+The unique number of found gadgets when ['--disable-warnings'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--disable-werror'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--disable-curldebug'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--disable-symbol-hiding'] is removed: 34437. Or, 0.3069% less
+The unique number of found gadgets when ['--disable-hidden-symbols'] is removed: 34437. Or, 0.3069% less
+The unique number of found gadgets when ['--disable-ares'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--disable-rt'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--disable-ech'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--disable-dependency-tracking'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--disable-largefile'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--disable-libtool-lock'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--disable-http'] is removed: 28692. Or, 16.9383% less
+The unique number of found gadgets when ['--disable-ftp'] is removed: 33066. Or, 4.2758% less
+The unique number of found gadgets when ['--disable-file'] is removed: 34502. Or, 0.1187% less
+The unique number of found gadgets when ['--disable-ldap'] is removed: 34539. Or, 0.0116% less
+The unique number of found gadgets when ['--disable-ldaps'] is removed: 34547. Or, 0.0116% more
+The unique number of found gadgets when ['--disable-rtsp'] is removed: 34463. Or, 0.2316% less
+The unique number of found gadgets when ['--disable-proxy'] is removed: 32893. Or, 4.7767% less
+The unique number of found gadgets when ['--disable-dict'] is removed: 34654. Or, 0.3213% more
+The unique number of found gadgets when ['--disable-telnet'] is removed: 33868. Or, 1.9541% less
+The unique number of found gadgets when ['--disable-tftp'] is removed: 33921. Or, 1.8007% less
+The unique number of found gadgets when ['--disable-pop3'] is removed: 34086. Or, 1.3230% less
+The unique number of found gadgets when ['--disable-imap'] is removed: 34440. Or, 0.2982% less
+The unique number of found gadgets when ['--disable-smb'] is removed: 34167. Or, 1.0885% less
+The unique number of found gadgets when ['--disable-smtp'] is removed: 33701. Or, 2.4375% less
+The unique number of found gadgets when ['--disable-gopher'] is removed: 34609. Or, 0.1911% more
+The unique number of found gadgets when ['--disable-mqtt'] is removed: 34623. Or, 0.2316% more
+The unique number of found gadgets when ['--disable-manual'] is removed: 34341. Or, 0.5848% less
+The unique number of found gadgets when ['--disable-libcurl-option'] is removed: 33639. Or, 2.6170% less
+The unique number of found gadgets when ['--disable-ipv6'] is removed: 34724. Or, 0.5240% more
+The unique number of found gadgets when ['--disable-openssl-auto-load-config'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--disable-versioned-symbols'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--disable-threaded-resolver'] is removed: 34595. Or, 0.1505% more
+The unique number of found gadgets when ['--disable-pthreads'] is removed: 34595. Or, 0.1505% more
+The unique number of found gadgets when ['--disable-verbose'] is removed: 33958. Or, 1.6935% less
+The unique number of found gadgets when ['--disable-sspi'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--disable-ntlm-wb'] is removed: 34589. Or, 0.1332% more
+The unique number of found gadgets when ['--disable-tls-srp'] is removed: 34672. Or, 0.3734% more
+The unique number of found gadgets when ['--disable-unix-sockets'] is removed: 34625. Or, 0.2374% more
+The unique number of found gadgets when ['--disable-cookies'] is removed: 33889. Or, 1.8933% less
+The unique number of found gadgets when ['--disable-socketpair'] is removed: 34438. Or, 0.3040% less
+The unique number of found gadgets when ['--disable-http-auth'] is removed: 34050. Or, 1.4272% less
+The unique number of found gadgets when ['--disable-doh'] is removed: 33973. Or, 1.6501% less
+The unique number of found gadgets when ['--disable-mime'] is removed: 33784. Or, 2.1973% less
+The unique number of found gadgets when ['--disable-dateparse'] is removed: 34612. Or, 0.1998% more
+The unique number of found gadgets when ['--disable-netrc'] is removed: 34580. Or, 0.1071% more
+The unique number of found gadgets when ['--disable-progress-meter'] is removed: 34683. Or, 0.4053% more
+The unique number of found gadgets when ['--disable-dnsshuffle'] is removed: 34597. Or, 0.1563% more
+The unique number of found gadgets when ['--disable-get-easy-options'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--disable-alt-svc'] is removed: 34485. Or, 0.1679% less
+The unique number of found gadgets when ['--disable-hsts'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--enable-maintainer-mode'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--enable-silent-rules'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--enable-debug'] is removed: 34918. Or, 1.0856% more
+The unique number of found gadgets when ['--enable-optimize'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--enable-warnings'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--enable-curldebug'] is removed: 32494. Or, 5.9317% less
+The unique number of found gadgets when ['--enable-symbol-hiding'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--enable-hidden-symbols'] is removed: 34543. Or, 0.0000%
+The unique number of found gadgets when ['--enable-ares'] is removed: 34566. Or, 0.0666% more
+The unique number of found gadgets when ['--enable-ech'] is removed: 34566. Or, 0.0666% more
+The unique number of found gadgets when ['--enable-code-coverage'] is removed: 50299. Or, 45.6127% more
+The unique number of found gadgets when ['--enable-dependency-tracking'] is removed: 34543. Or, 0.0000%
